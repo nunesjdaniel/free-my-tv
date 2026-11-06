@@ -579,3 +579,54 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* The Magic Remote's pointer: no text selection, no outlines. */
 * { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+
+/* Personal minimal theme: flat surfaces and a clear remote-control focus. */
+html, body, #sky { background: #111214; color: #F1F2F4; }
+#sky .grad, #sky canvas, #sky .veil, #sky .lift { display: none; }
+#title, .night #title { top: 68px; font-size: 42px; font-weight: 500; color: #F1F2F4; }
+.tab, .night .tab { color: #A8ADB5; font-size: 26px; }
+.tab.on, .night .tab.on { color: #F1F2F4; }
+.tab.focus, .night .tab.focus { color: #111214; box-shadow: none; }
+#clock, .night #clock { top: 345px; color: #F1F2F4; font-size: 142px; font-weight: 300; }
+#clock .date, .night #clock .date { color: #A8ADB5; font-size: 30px; margin-top: 24px; }
+.round, .night .round { background: #202226; color: #D8DCE2; box-shadow: none; }
+.round.focus, .night .round.focus { background: #F1F2F4; color: #111214; box-shadow: none; }
+.round.focus .tip, .night .round.focus .tip { color: #F1F2F4; }
+#platter, .night #platter { background: transparent; box-shadow: none; border-radius: 24px; }
+#platter::before { display: none; }
+.tile, .night .tile, .cell .face { background: #202226 !important; border-radius: 18px; box-shadow: none; }
+.tile img { max-width: 84%; max-height: 72%; }
+.tile img.logo { width: 80%; height: 60%; }
+.tile.focus, .night .tile.focus { box-shadow: none; -webkit-transform: scale(1.12); transform: scale(1.12); }
+.tile::after { display: none; }
+.tile::before, .night .tile::before { border-radius: 18px; background: rgba(0, 0, 0, 0.12); }
+#tiles.on .tile.focus::before { background: none; box-shadow: inset 0 0 0 3px #F1F2F4; }
+.more, .night .more { color: #A8ADB5; }
+.glass, .night .glass { background: #202226; box-shadow: none; }
+.row-title, .night .row-title, .panel .head, .night .panel .head { color: #A8ADB5; }
+.key, .night .key { color: #F1F2F4; }
+.key.focus, .night .key.focus { background: #F1F2F4; color: #111214; box-shadow: none; }
+.sheet { background: rgba(17, 18, 20, 0.96); }
+#settings .box, #shelfedit .box, #langpick .box { background: #202226; box-shadow: none; border-radius: 24px; }
+#saver .clock { background: none; box-shadow: none; border-radius: 0; }
+
+/* The bundled landscape stays available when the TV has no internet connection. */
+#sky {
+  background-color: #111214;
+  background-image: -webkit-linear-gradient(left, rgba(9, 13, 20, 0.64), rgba(9, 13, 20, 0.16)), url('landscape-wallpaper.png');
+  background-image: linear-gradient(to right, rgba(9, 13, 20, 0.64), rgba(9, 13, 20, 0.16)), url('landscape-wallpaper.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sky::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(top, rgba(9, 13, 20, 0.16), transparent 55%, rgba(9, 13, 20, 0.7));
+  background: linear-gradient(to bottom, rgba(9, 13, 20, 0.16), transparent 55%, rgba(9, 13, 20, 0.7));
+}
+#title, #clock, .tab { text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4); }
